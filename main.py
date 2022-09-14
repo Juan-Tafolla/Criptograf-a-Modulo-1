@@ -11,10 +11,25 @@
 import HillCipher as hill
 import PlayfairCipher as plfr
 import OTPCipher as otp
+import tkinter as tk
 
 class Main:
-    print('Hello World')
-
+    def __init__(self):
+    
+    
+    def draw_canvas(self):
+    
+    
+    def hill_cipher(self):
+        
+    def opt_cipher(self):
+    
+    def playfair_cipher(self):
+        
+    
+    def start(self):
+        tk.mainloop()    
+    
 
 if __name__ == '__main__':
     app = Main()
