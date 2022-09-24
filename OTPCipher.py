@@ -13,8 +13,13 @@ class Main:
         self.opt_cipher()
 
     def opt_cipher(self):
+        idx = 0
+        for i in self.pt:
+            self.cp = i ^ self.key[idx]
+            print(self.cp)
         
-        #?
+    def opt_decipher(self):
+        self.pt = self.cp[i] ^ self.key[i]
         
 if __name__ == '__main__':
     app = Main()
