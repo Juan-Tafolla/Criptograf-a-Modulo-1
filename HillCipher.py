@@ -1,7 +1,7 @@
 import numpy as np 
 from egcd import egcd
 
-abc = "abcdefghijklmnopqrstuvwxyz"
+abc = "abcdefghijklmnñopqrstuvwxyz@"
 to_int = dict(zip(abc, range(len(abc))))
 to_letter = dict(zip(range(len(abc)), abc))
 
