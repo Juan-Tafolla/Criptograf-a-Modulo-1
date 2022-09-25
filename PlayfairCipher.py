@@ -1,6 +1,7 @@
 import numpy as np
 
-matriz = ['@', 'I', 'S', 'A', 'Á', 'C', 'N', 'B', 'D', 'É', 'O', 'F', 'G', 'V', 'H', 'L', 'Í', 'J', 'K', 'M', 'Ñ', 'Ó', 'P', 'R', 'Q', 'U', 'E', 'T', 'Ú', 'Ü', '#', 'W', 'X', 'Y', 'Z', '&']
+matriz = ['@', 'I', 'S', 'A', 'ï¿½', 'C', 'N', 'B', 'D', 'ï¿½', 'O', 'F', 'G', 'V', 'H', 'L', 'ï¿½',
+ 'J', 'K', 'M', 'ï¿½', 'ï¿½', 'P', 'R', 'Q', 'U', 'E', 'T', 'ï¿½', 'ï¿½', '#', 'W', 'X', 'Y', 'Z', '&']
 matriz = np.array(matriz)
 matriz = matriz.reshape((6,6))
 
@@ -99,3 +100,12 @@ def decifrar(ct = ""):
     x +=2
   print("El mensaje descifrado es "+textD)
   return()
+
+
+class main:
+  cifrar("erick")
+  decifrar("erick")
+
+
+if __name__ == '__main__':
+  app = main()
