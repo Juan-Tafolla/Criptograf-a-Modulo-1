@@ -103,9 +103,7 @@ def decifrar(ct = ""):
 
 
 class main:
-  cifrar("erick")
-  decifrar("erick")
+  cifrar()
+  decifrar()
 
 
-if __name__ == '__main__':
-  app = main()

@@ -63,7 +63,7 @@ def decifrar(mensaje, llaveinv):
 
 def main():
     mensaje_claro = input("Escribe una palabra con 6 letras: ")
-    #mensaje_claro = "fausto"
+    #mensaje_claro = "naason"
     llave = np.matrix([[6, 15, 18], [19, 1, 11], [4, 25, 1]])
     llaveinv = matriz_inversa(llave, len(abc))
     criptograma = cifrar(mensaje_claro, llave)
@@ -71,6 +71,4 @@ def main():
     print("mensaje claro : "+ mensaje_claro)
     print("mensaje cifrado : "+ criptograma)
     print("Mensaje desifrado :"+ criptograma_mensaje_claro)
-    print(llaveinv)
-    
-main()
+
