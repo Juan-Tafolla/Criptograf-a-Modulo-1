@@ -1,7 +1,7 @@
 import numpy as np
 
-matriz = ['@', 'I', 'S', 'A', '�', 'C', 'N', 'B', 'D', '�', 'O', 'F', 'G', 'V', 'H', 'L', '�',
- 'J', 'K', 'M', '�', '�', 'P', 'R', 'Q', 'U', 'E', 'T', '�', '�', '#', 'W', 'X', 'Y', 'Z', '&']
+matriz = ['@', 'I', 'S', 'A', 'Á', 'C', 'N', 'B', 'D', 'É', 'O', 'F', 'G', 'V', 'H', 'L', 'Í',
+ 'J', 'K', 'M', 'Ñ', 'Ó', 'P', 'R', 'Q', 'U', 'E', 'T', 'Ú', 'Ü', '#', 'W', 'X', 'Y', 'Z', '&']
 matriz = np.array(matriz)
 matriz = matriz.reshape((6,6))
 
