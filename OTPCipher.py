@@ -49,8 +49,8 @@ class Main:
             val_list = list(self.dictionary.values())
             self.ck_position = val_list.index(idx)
             
-        self.ct_uni = self.ck_position + self.pt_position
-        self.ct_plain = self.dictionary[self.ct_uni]
+        self.ct_uni = ( self.ck_position + self.pt_position ) % 33
+        self.ct_plain = self.dictionary[self.ct_uni]  
         print("\n\nEl texto cifrado es: " + chr(int(self.ct_plain)) + '\n')
 
 
