@@ -15,17 +15,19 @@ import OTPCipher as otp
 
 class Main:
   
-    eleccion = input("Elige cual metodo quieres usar para codificar \n\n1. Cifrado HillCipher \n2. Cifrado PlayCipher \n3. Cifrado OtpCipher\n")
+    eleccion = input("Elige cual metodo quieres usar para codificar \n\n1. Cifrado HillCipher \n2. Cifrado PlayCipher \n3. Cifrado OtpCipher\n4. Salir")
     
     if(eleccion == "1"):
         print(hill.main())
         quit()
-    if(eleccion == "2"):
+    elif(eleccion == "2"):
         print(plfr.main())
         quit()
-    if(eleccion == "3"):
+    elif(eleccion == "3"):
         print(otp.Main())
         quit()
+    elif(eleccion == "4"):
+        return()
     else:
         print("Opcion invalida")
 
