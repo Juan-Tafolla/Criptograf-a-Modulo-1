@@ -14,7 +14,7 @@ def cifrar(pt = ""):
   b=1
 
   for a in text:
-    if b > len(text):
+    if b >= len(text):
       break
     elif a == text[b]:
       par = a + text[b]
