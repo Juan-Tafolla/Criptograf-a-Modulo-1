@@ -102,7 +102,7 @@ def decifrar(ct = ""):
   return()
 
 
-class main:
+def main():
   select = int(input("\nQue desea hacer?\n\n1. Cifrar\n2. Descifrar\n3. Salir\n"))
   while select != 3:
     if select == 1:

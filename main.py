@@ -14,9 +14,9 @@ import OTPCipher as otp
 
 
 class Main:
-    
+
     eleccion = ""
-    eleccion = input("Elige cual metodo quieres usar para codificar \n\n1. Cifrado HillCipher \n2. Cifrado PlayCipher \n3. Cifrado OtpCipher\n4. Salir")
+    eleccion = input("Elige cual metodo quieres usar para codificar \n\n1. Cifrado HillCipher \n2. Cifrado PlayCipher \n3. Cifrado OtpCipher\n4. Salir\n")
     
     if(eleccion == "1"):
         hill.main()
