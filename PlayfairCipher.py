@@ -14,7 +14,9 @@ def cifrar(pt = ""):
   b=1
 
   for a in text:
-    if a == text[b]:
+    if b > len(text):
+      break
+    elif a == text[b]:
       par = a + text[b]
       text = text.replace(par, a + "#" + text[b])
       b+=1
