@@ -104,7 +104,7 @@ def decifrar(ct = ""):
 
 class main:
   select = int(input("/nQue desea hacer?/n/n1. Cifrar/n2. Descifrar/n3. Salir"))
-  while select < 3:
+  while select != 3:
     if select == 1:
       mensaje == input("Inserte el mensaje que desea cifrar")
       cifrar(mensaje)
