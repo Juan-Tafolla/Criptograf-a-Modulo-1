@@ -1,58 +1,96 @@
-
-class Main:
+class Main():
     def __init__(self):
         
-        self.pt = input('\nIngrese el texto plano: ')
-        self.ck = input('\n\nIngrese la llave: ')
-
-        self.vocab = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜ'
-        self.dictionary = {}
-        self.plain_uni = []
-        self.ciphkey_uni = []
-
-        self.cipher()
+        self.inp_option = input("\n Antes de iniciar, elija una de las siguientes opciones: \n [1] Cifrar \n [2] Descifrar \n Opcion: ")
+        self.ct = ''
+        
+        self.vocab = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜ'   
+        self.inp_option = int(self.inp_option)
+        
+        if self.inp_option == 1:
+            print("\n ---------------------------------------------------------------------------------- \n \t\t ENCRIPTACION OTP")
+            self.pt = input('\nIngrese el texto plano: ')
+            self.ck = input('\n\nIngrese la llave: ')
+            
+            check = self.check_input()
+            if check == True:
+                self.cipher()
+                
+        elif self.inp_option == 2:
+            print("\n ---------------------------------------------------------------------------------- \n \t\t DESCIFRADOR OTP")
+            self.pt = input('\nIngrese el texto cifrado: ')
+            self.ck = input('\nIngrese la llave: ')
+            
+            check = self.check_input()
+            if check == True:
+                self.decipher()
     
-    def dict(self):
-        for idx,char in enumerate(self.vocab):
-            ucode = str(ord(char))
-            if ucode == '32':
-                continue
-            self.dictionary[idx] = ucode
+    def check_input(self):
         
-
-    def pt_to_uni(self):
-        for char in self.pt:
-            ucode = str(ord(char))
-            if ucode == '32':
-                continue
-            self.plain_uni += [ucode]
-            
-    def ck_to_uni(self):
-        for char in self.ck:
-            ucode = str(ord(char))
-            if ucode == '32':
-                continue
-            self.ciphkey_uni += [ucode]
-
+        if all(x.isalpha() or x.isspace() for x in self.pt) and all(x.isalpha() or x.isspace() for x in self.ck):
+            if len(self.ck) != len(self.pt):
+                print('\n[ERROR] El Cifrado OTP requiere que la llave y el texto sean de la misma longitud en caracteres!\n')
+                chekerr = False
+                return chekerr
+            else:
+                chekerr = True
+                return chekerr
+        else:
+            print('\n[ERROR] Solo ingrese letras y espacios\n')
+            chekerr = False
+            return chekerr
+    
     def cipher(self):
-        self.dict()
-        self.pt_to_uni()
-        self.ck_to_uni()
-
-        for idx in self.plain_uni:
-        
-            val_list = list(self.dictionary.values())
-            self.pt_position = val_list.index(idx)
-        
-        for idx in self.ciphkey_uni:
-            # key_list = list(self.dict_mayus.keys())
-            val_list = list(self.dictionary.values())
-            self.ck_position = val_list.index(idx)
+        for idx,x in enumerate(self.pt):
             
-        self.ct_uni = ( self.ck_position + self.pt_position ) % 33
-        self.ct_plain = self.dictionary[self.ct_uni]  
-        print("\n\nEl texto cifrado es: " + chr(int(self.ct_plain)) + '\n')
+            if x == ' ':
+                self.ct += ' '
+                continue    
+           
+            min_check = x.islower()
+            
+            if min_check == True:
+                x = x.upper()
+           
+            xi = self.vocab.find(x) 
+            y = self.ck[idx]
+            y = y.upper()
+            yi = self.vocab.find(y)      
+            res = self.vocab[(xi+yi)%33]
+            
+            if min_check == True:
+                res = res.lower() 
+            
+            self.ct += res
+            print(self.ct)
+            
+        print("\nTexto cifrado: " + self.ct)
 
+    def decipher(self):
+        for idx,x in enumerate(self.pt):
+            
+            if x == ' ':
+                self.ct += ' '
+                continue    
+           
+            min_check = x.islower()
+            
+            if min_check == True:
+                x = x.upper()
+           
+            xi = self.vocab.find(x) 
+            y = self.ck[idx]
+            y = y.upper()
+            yi = self.vocab.find(y)      
+            res = self.vocab[(xi-yi)%33]
+            
+            if min_check == True:
+                res = res.lower() 
+            
+            self.ct += res
+            print(self.ct)
+            
+        print("\nTexto descifrado: " + self.ct)
 
 if __name__ == '__main__':
     app = Main()
